@@ -32,6 +32,6 @@ export class OfferService {
    * @returns - Feature array
    */
   public loadOffers(): Observable<Offer[]> {
-    return this.http.get<Offer[]>(environment.API_URL + '/Offer/get');
+    return this.http.get<Offer[]>(environment.API_URL + 'Offer/get');
   }
 }
