@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 
 import { RegisterComponent } from './components/register/register.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationService } from './services/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { OffersListComponent } from './components/shared/offers-list/offers-list.component';
+import { OfferCardComponent } from './components/shared/offer-card/offer-card.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,15 @@ import { OffersListComponent } from './components/shared/offers-list/offers-list
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    OffersListComponent
+    OffersListComponent,
+    OfferCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     AuthenticationService

@@ -11,6 +11,4 @@ export interface User {
     login: string;
     password: string;
     role: number;
-    offers: Offer[];
-    reviews: Review[];
 }

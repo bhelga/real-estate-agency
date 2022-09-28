@@ -6,12 +6,14 @@ import { AuthGuard } from './helpers/auth.guard';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AppComponent } from './app.component';
+import { OffersListComponent } from './components/shared/offers-list/offers-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard]},
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'offers', component: OffersListComponent, canActivate: [AuthGuard]},
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }

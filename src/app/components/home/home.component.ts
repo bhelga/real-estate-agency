@@ -33,8 +33,6 @@ export class HomeComponent implements OnInit, OnDestroy {
             login: "123",
             password: "123",
             role: 3,
-            offers: [],
-            reviews: []
           }
         // this.currentUserSubscription = this.authenticationService.currentUser.subscribe((user: any) => {
         //     this.currentUser = user;

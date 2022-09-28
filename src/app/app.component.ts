@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 import { User } from './models/user';
 import { AuthenticationService } from './services/authentication.service';
 
@@ -19,6 +19,12 @@ export class AppComponent {
         private authenticationService: AuthenticationService
     ) {
         this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+        this.router.events.subscribe((event: any) => {
+            if (event instanceof NavigationStart) {
+                // Show progress spinner or progress bar
+               this.showMenuEnabled = false;
+            }
+        });
     }
 
     logout() {

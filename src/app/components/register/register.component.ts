@@ -41,8 +41,6 @@ export class RegisterComponent implements OnInit {
             login: ['', Validators.required],
             password: ['', [Validators.required, Validators.minLength(6)]],
             role: 3,
-            offers: new FormArray([]),
-            reviews: new FormArray([]),
         });
     }
 

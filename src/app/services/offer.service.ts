@@ -18,7 +18,7 @@ export class OfferService {
 
   constructor(private http: HttpClient) {}
 
-  get allFeatures(): Observable<Offer[]> {
+  get allOffers(): Observable<Offer[]> {
     if (!this._allOffers$) {
       this._allOffers$ = this.loadOffers().pipe(
         shareReplay(CACHE_SIZE)

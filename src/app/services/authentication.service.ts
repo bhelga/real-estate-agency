@@ -32,8 +32,6 @@ export class AuthenticationService {
             login: "123",
             password: "123",
             role: 3,
-            offers: [],
-            reviews: []
           };
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.currentUserSubject.next(user);
