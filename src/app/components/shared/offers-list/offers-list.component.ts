@@ -27,10 +27,10 @@ export class OffersListComponent implements OnInit {
   constructor(private offerService: OfferService) { }
 
   ngOnInit(): void {
-    this.filteredOffer = this.mockedOffers;
     this.offerService.allOffers.subscribe(result => {
       this.mockedOffers = result as Offer[];
-    })
+    });
+    this.filteredOffer = this.mockedOffers;
   }
 
   onRoomSwitch() {
