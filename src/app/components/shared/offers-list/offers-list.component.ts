@@ -29,8 +29,8 @@ export class OffersListComponent implements OnInit {
   ngOnInit(): void {
     this.offerService.allOffers.subscribe(result => {
       this.mockedOffers = result as Offer[];
+      this.filteredOffer = this.mockedOffers;
     });
-    this.filteredOffer = this.mockedOffers;
   }
 
   onRoomSwitch() {
