@@ -12,6 +12,7 @@ import { AuthenticationService } from './services/authentication.service';
  })
 export class AppComponent {
     currentUser?: User;
+    showMenuEnabled: boolean = false;
 
     constructor(
         private router: Router,
@@ -23,5 +24,9 @@ export class AppComponent {
     logout() {
         this.authenticationService.logout();
         this.router.navigate(['/login']);
+    }
+
+    showMenu() {
+        this.showMenuEnabled = !this.showMenuEnabled;
     }
 }

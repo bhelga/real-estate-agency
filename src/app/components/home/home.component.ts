@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { first } from 'rxjs/operators';
-import { User } from '../models/user';
-import { AuthenticationService } from '../services/authentication.service';
-import { UserService } from '../services/user.service';
+import { User } from 'src/app/models/user';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import { UserService } from 'src/app/services/user.service';
+
 
 
 
@@ -15,16 +16,29 @@ import { UserService } from '../services/user.service';
 })
 export class HomeComponent implements OnInit, OnDestroy {
     currentUser: User | undefined;
-    currentUserSubscription: Subscription;
+    // currentUserSubscription: Subscription;
     users: User[] = [];
 
     constructor(
         private authenticationService: AuthenticationService,
         private userService: UserService
     ) {
-        this.currentUserSubscription = this.authenticationService.currentUser.subscribe((user: any) => {
-            this.currentUser = user;
-        });
+        this.currentUser = {
+            id: 2,
+            firstName: "Петро",
+            middleName: "Петрович",
+            lastName: "Петренко",
+            telephone: "+38000000000",
+            email: "example@example.com",
+            login: "123",
+            password: "123",
+            role: 3,
+            offers: [],
+            reviews: []
+          }
+        // this.currentUserSubscription = this.authenticationService.currentUser.subscribe((user: any) => {
+        //     this.currentUser = user;
+        // });
     }
 
     ngOnInit() {
@@ -33,7 +47,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         // unsubscribe to ensure no memory leaks
-        this.currentUserSubscription.unsubscribe();
+        // this.currentUserSubscription.unsubscribe();
     }
 
     deleteUser(id: number) {

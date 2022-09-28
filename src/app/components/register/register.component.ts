@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
-import { UserService } from '../services/user.service';
-import { AuthenticationService } from '../services/authentication.service';
-import { AlertService } from '../services/alert.service';
+import { UserService } from '../../services/user.service';
+import { AuthenticationService } from '../../services/authentication.service';
+import { AlertService } from '../../services/alert.service';
 
 
 @Component({
@@ -32,6 +32,7 @@ export class RegisterComponent implements OnInit {
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
+            id: new Date(Date.now()).getMilliseconds(),
             firstName: ['', Validators.required],
             middleName: ['', Validators.required],
             lastName: ['', Validators.required],
@@ -40,8 +41,8 @@ export class RegisterComponent implements OnInit {
             username: ['', Validators.required],
             password: ['', [Validators.required, Validators.minLength(6)]],
             role: 3,
-            offers: [],
-            reviews: [],
+            offers: new FormArray([]),
+            reviews: new FormArray([]),
         });
     }
 
