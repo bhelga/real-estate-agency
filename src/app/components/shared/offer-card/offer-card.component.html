@@ -25,5 +25,6 @@
         <small>{{currentUser?.login ?? 'anonymous'}}</small>
       </div>
     </div>
+    <a *ngIf="!!canEdit" routerLink="/editOffer/{{offer.id}}" class="btn btn-primary">Edit Offer</a>
   </div>
 </div>

@@ -39,4 +39,8 @@ export class AppComponent {
     goToProfilePage() {
         this.router.navigate(['/profile/' + this.currentUser?.id]);
     }
+
+    goToEditPage() {
+        this.router.navigate(['/edit/' + this.currentUser?.id]);
+    }
 }

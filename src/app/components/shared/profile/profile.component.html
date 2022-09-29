@@ -46,7 +46,7 @@
         <div class="profile-body">
           <div class="profile-posts tab">
             <div *ngIf="userOffers.length" class="container card-container">
-                <app-offer-card *ngFor="let offer of userOffers" [offer]="offer"></app-offer-card>
+                <app-offer-card *ngFor="let offer of userOffers" [offer]="offer" [canEdit]="true"></app-offer-card>
             </div>
             <div *ngIf="!userOffers.length">
                 <p>There are no offers yet!</p>

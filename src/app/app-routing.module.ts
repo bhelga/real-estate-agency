@@ -15,6 +15,7 @@ import { CreateOfferComponent } from './components/shared/create-offer/create-of
 import { RealtorListComponent } from './components/shared/realtor-list/realtor-list.component';
 import { AgencyListComponent } from './components/shared/agency-list/agency-list.component';
 import { AboutUsComponent } from './components/shared/about-us/about-us.component';
+import { OfferEditComponent } from './components/shared/offer-edit/offer-edit.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard]},
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path: 'realtors', component: RealtorListComponent, canActivate: [AuthGuard]},
   {path: 'agencies', component: AgencyListComponent, canActivate: [AuthGuard]},
   {path: 'about', component: AboutUsComponent, canActivate: [AuthGuard]},
+  {path: 'editOffer/:id', component: OfferEditComponent, canActivate: [AuthGuard]},
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }

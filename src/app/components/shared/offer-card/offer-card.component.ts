@@ -12,6 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class OfferCardComponent implements OnInit {
   @Input() offer!: Offer;
+  @Input() canEdit?: boolean;
 
   imagesArray: string[] = [
     'https://i.pinimg.com/564x/19/ad/b5/19adb513a7a943bc471dc0fd03594797.jpg',
