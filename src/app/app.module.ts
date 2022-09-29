@@ -24,6 +24,8 @@ import { CreateOfferComponent } from './components/shared/create-offer/create-of
 import { RealtorListComponent } from './components/shared/realtor-list/realtor-list.component';
 import { RealtorCardComponent } from './components/shared/realtor-card/realtor-card.component';
 import { RealtorPageComponent } from './components/shared/realtor-page/realtor-page.component';
+import { AgencyListComponent } from './components/shared/agency-list/agency-list.component';
+import { AgencyCardComponent } from './components/shared/agency-card/agency-card.component';
 
 
 
@@ -43,7 +45,9 @@ import { RealtorPageComponent } from './components/shared/realtor-page/realtor-p
     CreateOfferComponent,
     RealtorListComponent,
     RealtorCardComponent,
-    RealtorPageComponent
+    RealtorPageComponent,
+    AgencyListComponent,
+    AgencyCardComponent
   ],
   imports: [
     BrowserModule,
