@@ -12,6 +12,7 @@ import { PreferencesComponent } from './components/shared/preferences/preference
 import { ProfileComponent } from './components/shared/profile/profile.component';
 import { EditProfileComponent } from './components/shared/edit-profile/edit-profile.component';
 import { CreateOfferComponent } from './components/shared/create-offer/create-offer.component';
+import { RealtorListComponent } from './components/shared/realtor-list/realtor-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard]},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'profile/:id', component: ProfileComponent, canActivate: [AuthGuard]},
   {path: 'edit/:id', component: EditProfileComponent, canActivate: [AuthGuard]},
   {path: 'createOffer', component: CreateOfferComponent, canActivate: [AuthGuard]},
+  {path: 'realtors', component: RealtorListComponent, canActivate: [AuthGuard]},
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }

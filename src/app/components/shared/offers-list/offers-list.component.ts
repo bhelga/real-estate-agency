@@ -22,7 +22,7 @@ export class OffersListComponent implements OnInit {
   terrainEnabled: boolean = true;
 
   minPrice: number = 0;
-  maxPrice: number = 100;
+  maxPrice: number = 10000;
 
   constructor(private offerService: OfferService) { }
 
@@ -82,7 +82,7 @@ export class OffersListComponent implements OnInit {
     });
 
     switchedArray = switchedArray.filter(offer => {
-      return offer.price > this.minPrice || offer.price < this.maxPrice;
+      return offer.price > this.minPrice && offer.price < this.maxPrice;
     });
 
     this.filteredOffer = switchedArray;

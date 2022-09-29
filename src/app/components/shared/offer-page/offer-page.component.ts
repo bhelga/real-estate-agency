@@ -92,7 +92,7 @@ export class OfferPageComponent implements OnInit {
       offerid: this.offer.id,
       userid: this.authenticationService.currentUserValue.id,
     };
-    this.reviewService.createReview(review);
+    this.reviewService.createReview(review).subscribe();
   }
 
   loadOfferReviews() {

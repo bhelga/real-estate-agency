@@ -66,6 +66,7 @@ export class OfferCardComponent implements OnInit {
     this.image = this.imagesArray.at(Math.floor(Math.random() * 10)) ?? '';
     this.avatar = this.avatarsArray.at(Math.floor(Math.random() * 10)) ?? '';
     this.offerType = this.getStringOfferType();
+    this.userService.getById(this.offer.userid).subscribe(result => this.currentUser = result);
   }
 
   onCardClick() {
@@ -74,13 +75,13 @@ export class OfferCardComponent implements OnInit {
 
   private getStringOfferType(): string {
     switch (this.offer.offertype) {
-      case 1:
+      case 0:
         return 'Room';
-      case 2: 
+      case 1: 
         return 'House';
-      case 3:
+      case 2:
         return 'Garage';
-      case 4:
+      case 3:
         return 'Terrain';
     }
     return '';

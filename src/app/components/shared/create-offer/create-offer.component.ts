@@ -31,7 +31,7 @@ export class CreateOfferComponent implements OnInit {
   ngOnInit(): void {
     const currentUser = this.authenticationService.currentUserValue;
     this.offer = {
-      id: new Date().getTime(),
+      id: 0,
       title: '',
       description: '',
       price: 0,
