@@ -52,7 +52,7 @@ export class OfferPageComponent implements OnInit {
               r.id !== this.offer.id;
           })
         })
-        this.userService.getById(this.offer.userId);
+        this.userService.getById(this.offer.userid);
       });
     }
   }
@@ -90,8 +90,8 @@ export class OfferPageComponent implements OnInit {
     let review: Review = {
       id: new Date().getTime(),
       review: this.reviewMessage,
-      offerId: this.offer.id,
-      userId: this.authenticationService.currentUserValue.id,
+      offerid: this.offer.id,
+      userid: this.authenticationService.currentUserValue.id,
     };
     this.reviewService.createReview(review);
   }

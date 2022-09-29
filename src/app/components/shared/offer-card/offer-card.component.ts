@@ -73,7 +73,7 @@ export class OfferCardComponent implements OnInit {
   }
 
   private getStringOfferType(): string {
-    switch (this.offer.offerType) {
+    switch (this.offer.offertype) {
       case 1:
         return 'Room';
       case 2: 

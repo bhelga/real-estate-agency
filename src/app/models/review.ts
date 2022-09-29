@@ -4,6 +4,6 @@ import { User } from "./user";
 export interface Review {
     id: number;
     review: string;
-    offerId: number;
-    userId: number;
+    offerid: number;
+    userid: number;
 }

@@ -7,7 +7,7 @@ export interface Offer {
     description: string;
     price: number;
     square: number;
-    offerType: number;
-    buyType: number;
-    userId: number;
+    offertype: number;
+    buytype: number;
+    userid: number;
 }

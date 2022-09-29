@@ -3,9 +3,9 @@ import { Review } from "./review";
 
 export interface User {
     id: number;
-    firstName: string;
-    middleName: string;
-    lastName: string;
+    firstname: string;
+    middlename: string;
+    lastname: string;
     telephone: string;
     email: string;
     login: string;

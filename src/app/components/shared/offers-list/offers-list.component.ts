@@ -76,7 +76,7 @@ export class OffersListComponent implements OnInit {
     });
 
     filteredArray.forEach(filter => {
-      if (switchFilters.includes(filter.offerType)) {
+      if (switchFilters.includes(filter.offertype)) {
         switchedArray.push(filter);
       }
     });
@@ -89,7 +89,7 @@ export class OffersListComponent implements OnInit {
   }
 
   private getStringOfferType(offer: Offer): string {
-    switch (offer.offerType) {
+    switch (offer.offertype) {
       case 0:
         return 'Room';
       case 1: 

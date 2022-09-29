@@ -29,7 +29,7 @@ export class ReviewCardComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.userService.getById(this.review.userId).subscribe(result => {
+    this.userService.getById(this.review.userid).subscribe(result => {
       this.user = result as User;
     })
     // this.user = {
