@@ -26,6 +26,7 @@ import { RealtorCardComponent } from './components/shared/realtor-card/realtor-c
 import { RealtorPageComponent } from './components/shared/realtor-page/realtor-page.component';
 import { AgencyListComponent } from './components/shared/agency-list/agency-list.component';
 import { AgencyCardComponent } from './components/shared/agency-card/agency-card.component';
+import { AboutUsComponent } from './components/shared/about-us/about-us.component';
 
 
 
@@ -47,7 +48,8 @@ import { AgencyCardComponent } from './components/shared/agency-card/agency-card
     RealtorCardComponent,
     RealtorPageComponent,
     AgencyListComponent,
-    AgencyCardComponent
+    AgencyCardComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
