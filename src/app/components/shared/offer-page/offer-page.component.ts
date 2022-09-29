@@ -46,11 +46,8 @@ export class OfferPageComponent implements OnInit {
     if (id) {
       this.offerService.loadOfferById(+id).subscribe(result => {
         this.offer = result as Offer;
-        this.reviewService.allReviews.subscribe(res => {
+        this.reviewService.loadLinkedReviews(this.offer.id).subscribe(res => {
           this.reviews = res as Review[];
-          this.reviews.filter(r => {
-              r.id === this.offer.id;
-          })
         })
         this.userService.getById(this.offer.userid).subscribe(user => {
           this.offerOwner = user as User;
