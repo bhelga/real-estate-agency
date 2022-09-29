@@ -112,5 +112,6 @@ export class OfferPageComponent implements OnInit {
     if (storedPreferences) {
       storedPreferences.push(this.offer);
     }
+    localStorage.setItem('preferences', JSON.stringify(storedPreferences));
   }
 }
