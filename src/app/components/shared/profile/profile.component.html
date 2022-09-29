@@ -45,10 +45,10 @@
         </div>
         <div class="profile-body">
           <div class="profile-posts tab">
-            <div *ngIf="userOffers?.length" class="container card-container">
+            <div *ngIf="userOffers.length" class="container card-container">
                 <app-offer-card *ngFor="let offer of userOffers" [offer]="offer"></app-offer-card>
             </div>
-            <div *ngIf="!userOffers?.length">
+            <div *ngIf="!userOffers.length">
                 <p>There are no offers yet!</p>
             </div>
             <a class="btn btn--form preferences" routerLink="/">Create new offer!</a>
