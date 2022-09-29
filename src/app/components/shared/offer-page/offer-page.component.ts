@@ -49,10 +49,12 @@ export class OfferPageComponent implements OnInit {
         this.reviewService.allReviews.subscribe(res => {
           this.reviews = res as Review[];
           this.reviews.filter(r => {
-              r.id !== this.offer.id;
+              r.id === this.offer.id;
           })
         })
-        this.userService.getById(this.offer.userid);
+        this.userService.getById(this.offer.userid).subscribe(user => {
+          this.offerOwner = user as User;
+        });
       });
     }
   }
