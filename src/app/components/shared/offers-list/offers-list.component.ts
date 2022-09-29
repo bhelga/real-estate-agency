@@ -90,13 +90,13 @@ export class OffersListComponent implements OnInit {
 
   private getStringOfferType(offer: Offer): string {
     switch (offer.offerType) {
-      case 1:
+      case 0:
         return 'Room';
-      case 2: 
+      case 1: 
         return 'House';
-      case 3:
+      case 2:
         return 'Garage';
-      case 4:
+      case 3:
         return 'Terrain';
     }
     return '';

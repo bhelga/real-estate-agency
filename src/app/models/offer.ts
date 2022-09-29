@@ -9,6 +9,5 @@ export interface Offer {
     square: number;
     offerType: number;
     buyType: number;
-    userId?: number;
-    user: User;
+    userId: number;
 }

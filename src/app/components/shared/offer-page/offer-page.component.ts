@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Offer } from 'src/app/models/offer';
 import { Review } from 'src/app/models/review';
+import { User } from 'src/app/models/user';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { OfferService } from 'src/app/services/offer.service';
 import { ReviewService } from 'src/app/services/review.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-offer-page',
@@ -15,6 +17,7 @@ export class OfferPageComponent implements OnInit {
 
   offer!: Offer;
   reviews?: Review[];
+  offerOwner!: User;
 
   reviewMessage: string = '';
 
@@ -35,19 +38,21 @@ export class OfferPageComponent implements OnInit {
   isBedroomRoomShown: boolean = false;
   isLivingRoom2Shown: boolean = false;
   
-  constructor(private route: ActivatedRoute, private offerService: OfferService, private reviewService: ReviewService, private authenticationService: AuthenticationService) { }
+  constructor(private route: ActivatedRoute, private offerService: OfferService, private reviewService: ReviewService, private authenticationService: AuthenticationService,
+    private userService: UserService) { }
 
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.offerService.loadOfferById(+id).subscribe(result => {
         this.offer = result as Offer;
-        this.reviewService.allReviews.subscribe(result => {
-          this.reviews = result as Review[];
+        this.reviewService.allReviews.subscribe(res => {
+          this.reviews = res as Review[];
           this.reviews.filter(r => {
               r.id !== this.offer.id;
           })
         })
+        this.userService.getById(this.offer.userId);
       });
     }
   }
@@ -98,5 +103,9 @@ export class OfferPageComponent implements OnInit {
             r.id !== this.offer.id;
         })
     })
+  }
+
+  addOfferToPreferences() {
+    localStorage.getItem('preferences');
   }
 }

@@ -49,8 +49,8 @@
           <!-- Contact -->
           <div class="w3-container" id="contact">
             <h2>Contact us!</h2>
-            <i class="fa fa-phone" style="width:30px"></i> {{offer.user.telephone}}<br>
-            <i class="fa fa-envelope" style="width:30px"> </i> {{offer.user.email}}<br>
+            <i class="fa fa-phone" style="width:30px"></i> {{offerOwner.telephone}}<br>
+            <i class="fa fa-envelope" style="width:30px"> </i> {{offerOwner.email}}<br>
             <p>Questions? Go ahead, ask them:</p>
             <form >
               <div style="display: flex;">
@@ -58,8 +58,8 @@
               <p><input class="w3-input w3-border form-control" type="text" placeholder="Email" required name="Email"></p>
               <p><input class="w3-input w3-border form-control" type="text" placeholder="Message" required name="Message" [(ngModel)]="reviewMessage"></p>
               </div>
-              <input class="btn btn--form" type="submit" value="Send a message"/>
-              <input class="btn btn--form preferences" type="submit" value="Add to preferences"/>
+              <input class="btn btn--form" type="submit" value="Send a message" (click)="onSendMessageSubmit()"/>
+              <input class="btn btn--form preferences" type="submit" value="Add to preferences" (click)="addOfferToPreferences()"/>
             </form>
           </div>
 
