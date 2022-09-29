@@ -40,7 +40,7 @@ export class ReviewService {
     return this.http.get<Review[]>(environment.API_URL + 'Review/offer/' + id);
   }
 
-  public createReview(review: Review): void {
-    this.http.post<Review>(environment.API_URL + "Review/create", review);
+  public createReview(review: Review): Observable<any> {
+    return this.http.post<Review>(environment.API_URL + "Review/create", review);
   }
 }

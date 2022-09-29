@@ -66,12 +66,13 @@ export class CreateOfferComponent implements OnInit {
 
   createNewOffer() {
     if (this.offer.title.length && this.offer.description.length && this.offer.price && this.offer.square) {
-      this.offerService.createOffer(this.offer);
-      Swal.fire({
-        icon: 'success',
-        title: 'Success!',
-        text: 'Data was successfully updated!',
-      })
+      this.offerService.createOffer(this.offer).subscribe(res => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: 'Data was successfully updated!',
+        })
+      });
     }
     else {
       Swal.fire({

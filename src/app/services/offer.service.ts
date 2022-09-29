@@ -43,7 +43,7 @@ export class OfferService {
     return this.http.get<Offer[]>(environment.API_URL + 'Offer/user/' + userId);
   }
 
-  public createOffer(offer: Offer) {
-    this.http.post<Offer>(environment.API_URL + 'Offer/create', offer);
+  public createOffer(offer: Offer): Observable<any> {
+    return this.http.post<Offer>(environment.API_URL + 'Offer/create', offer);
   }
 }

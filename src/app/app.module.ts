@@ -21,6 +21,9 @@ import { PreferencesComponent } from './components/shared/preferences/preference
 import { ProfileComponent } from './components/shared/profile/profile.component';
 import { EditProfileComponent } from './components/shared/edit-profile/edit-profile.component';
 import { CreateOfferComponent } from './components/shared/create-offer/create-offer.component';
+import { RealtorListComponent } from './components/shared/realtor-list/realtor-list.component';
+import { RealtorCardComponent } from './components/shared/realtor-card/realtor-card.component';
+import { RealtorPageComponent } from './components/shared/realtor-page/realtor-page.component';
 
 
 
@@ -37,7 +40,10 @@ import { CreateOfferComponent } from './components/shared/create-offer/create-of
     PreferencesComponent,
     ProfileComponent,
     EditProfileComponent,
-    CreateOfferComponent
+    CreateOfferComponent,
+    RealtorListComponent,
+    RealtorCardComponent,
+    RealtorPageComponent
   ],
   imports: [
     BrowserModule,

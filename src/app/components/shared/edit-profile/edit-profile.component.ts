@@ -43,12 +43,14 @@ export class EditProfileComponent implements OnInit {
     if (this.user.firstname && this.user.middlename && this.user.lastname && this.user.email && this.user.telephone && this.password === this.confirmedPassword) {
       this.user.password = this.password;
       console.log(this.user);
-      this.userService.updateUser(this.user.id, this.user);
-      Swal.fire({
-        icon: 'success',
-        title: 'Success!',
-        text: 'Data was successfully updated!',
-      })
+      this.userService.updateUser(this.user.id, this.user).subscribe(res => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: 'Data was successfully updated!',
+        })
+      });
+      
     }
     else {
       Swal.fire({
