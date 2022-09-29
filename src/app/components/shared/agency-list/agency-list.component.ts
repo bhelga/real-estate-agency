@@ -9,27 +9,13 @@ import { AgencyService } from 'src/app/services/agency.service';
 })
 export class AgencyListComponent implements OnInit {
 
-  // agencies: Agency[] = [];
-  agencies: Agency[] = [
-    {
-      "id": 1,
-      "name": "Capitan Soap"
-  },
-  {
-    "id": 1,
-    "name": "Capitan Soap"
-},
-{
-  "id": 1,
-  "name": "Capitan Soap"
-}
-  ]
+  agencies: Agency[] = [];
 
   constructor(private realtorService: AgencyService) { }
 
   ngOnInit(): void {
-    // this.realtorService.loadAgencies().subscribe(result => {
-    //   this.agencies = result as Agency[];
-    // });
+    this.realtorService.loadAgencies().subscribe(result => {
+      this.agencies = result as Agency[];
+    });
   }
 }
