@@ -108,6 +108,9 @@ export class OfferPageComponent implements OnInit {
   }
 
   addOfferToPreferences() {
-    localStorage.getItem('preferences');
+    let storedPreferences = JSON.parse(localStorage.getItem('preferences') ?? '');
+    if (storedPreferences) {
+      storedPreferences.push(this.offer);
+    }
   }
 }

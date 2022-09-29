@@ -8,6 +8,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { AppComponent } from './app.component';
 import { OffersListComponent } from './components/shared/offers-list/offers-list.component';
 import { OfferPageComponent } from './components/shared/offer-page/offer-page.component';
+import { PreferencesComponent } from './components/shared/preferences/preferences.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard]},
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'offers', component: OffersListComponent, canActivate: [AuthGuard]},
   {path: 'offers/:id', component: OfferPageComponent, canActivate: [AuthGuard]},
+  {path: 'preferences', component: PreferencesComponent, canActivate: [AuthGuard]},
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }

@@ -17,6 +17,8 @@ import { OfferService } from './services/offer.service';
 import { ReviewService } from './services/review.service';
 import { UserService } from './services/user.service';
 import { ReviewCardComponent } from './components/shared/review-card/review-card.component';
+import { PreferencesComponent } from './components/shared/preferences/preferences.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { ReviewCardComponent } from './components/shared/review-card/review-card
     OffersListComponent,
     OfferCardComponent,
     OfferPageComponent,
-    ReviewCardComponent
+    ReviewCardComponent,
+    PreferencesComponent
   ],
   imports: [
     BrowserModule,
