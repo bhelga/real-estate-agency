@@ -10,6 +10,7 @@ import { OffersListComponent } from './components/shared/offers-list/offers-list
 import { OfferPageComponent } from './components/shared/offer-page/offer-page.component';
 import { PreferencesComponent } from './components/shared/preferences/preferences.component';
 import { ProfileComponent } from './components/shared/profile/profile.component';
+import { EditProfileComponent } from './components/shared/edit-profile/edit-profile.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard]},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'offers/:id', component: OfferPageComponent, canActivate: [AuthGuard]},
   {path: 'preferences', component: PreferencesComponent, canActivate: [AuthGuard]},
   {path: 'profile/:id', component: ProfileComponent, canActivate: [AuthGuard]},
+  {path: 'edit/:id', component: EditProfileComponent, canActivate: [AuthGuard]},
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }

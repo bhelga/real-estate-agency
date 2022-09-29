@@ -19,6 +19,8 @@ import { UserService } from './services/user.service';
 import { ReviewCardComponent } from './components/shared/review-card/review-card.component';
 import { PreferencesComponent } from './components/shared/preferences/preferences.component';
 import { ProfileComponent } from './components/shared/profile/profile.component';
+import { EditProfileComponent } from './components/shared/edit-profile/edit-profile.component';
+
 
 
 @NgModule({
@@ -32,14 +34,15 @@ import { ProfileComponent } from './components/shared/profile/profile.component'
     OfferPageComponent,
     ReviewCardComponent,
     PreferencesComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     AuthenticationService,

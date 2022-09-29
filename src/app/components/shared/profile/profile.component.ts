@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Offer } from 'src/app/models/offer';
 import { User } from 'src/app/models/user';
 import { OfferService } from 'src/app/services/offer.service';
@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit {
   userOffers: Offer[] = [];
   userRole: string = '';
 
-  constructor(private route: ActivatedRoute, private userService: UserService, private offerService: OfferService) { }
+  constructor(private route: ActivatedRoute, private userService: UserService, private offerService: OfferService, private router: Router) { }
 
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id');
@@ -47,4 +47,7 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  goToEditPage() {
+    this.router.navigate(['/edit/' + this.user.id]);
+  }
 }
