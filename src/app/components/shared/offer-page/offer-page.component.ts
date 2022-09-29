@@ -42,7 +42,12 @@ export class OfferPageComponent implements OnInit {
     if (id) {
       this.offerService.loadOfferById(+id).subscribe(result => {
         this.offer = result as Offer;
-      this.loadOfferReviews();
+        this.reviewService.allReviews.subscribe(result => {
+          this.reviews = result as Review[];
+          this.reviews.filter(r => {
+              r.id !== this.offer.id;
+          })
+        })
       });
     }
   }
