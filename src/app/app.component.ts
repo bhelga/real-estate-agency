@@ -35,4 +35,8 @@ export class AppComponent {
     showMenu() {
         this.showMenuEnabled = !this.showMenuEnabled;
     }
+
+    goToProfilePage() {
+        this.router.navigate(['/profile/' + this.currentUser?.id]);
+    }
 }

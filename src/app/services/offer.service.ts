@@ -38,4 +38,8 @@ export class OfferService {
   public loadOfferById(id: number): Observable<Offer> {
     return this.http.get<Offer>(environment.API_URL + 'Offer/get/' + id);
   }
+
+  public loadAllOffersByUserId(userId: number): Observable<Offer[]> {
+    return this.http.get<Offer[]>(environment.API_URL + 'Offer/user/' + userId);
+  }
 }

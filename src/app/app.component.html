@@ -33,7 +33,7 @@
         </a>
         <ul class="dropdown-menu" [ngClass]="{'show' : showMenuEnabled}" aria-labelledby="navbarDropdownMenuLink">
           <li>
-            <a class="dropdown-item" routerLink="/preferences">My profile</a>
+            <a class="dropdown-item" (click)="goToProfilePage()">My profile</a>
           </li>
           <li>
             <a class="dropdown-item" href="#">Settings</a>
