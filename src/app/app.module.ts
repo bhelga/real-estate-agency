@@ -20,6 +20,7 @@ import { ReviewCardComponent } from './components/shared/review-card/review-card
 import { PreferencesComponent } from './components/shared/preferences/preferences.component';
 import { ProfileComponent } from './components/shared/profile/profile.component';
 import { EditProfileComponent } from './components/shared/edit-profile/edit-profile.component';
+import { CreateOfferComponent } from './components/shared/create-offer/create-offer.component';
 
 
 
@@ -35,7 +36,8 @@ import { EditProfileComponent } from './components/shared/edit-profile/edit-prof
     ReviewCardComponent,
     PreferencesComponent,
     ProfileComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    CreateOfferComponent
   ],
   imports: [
     BrowserModule,
