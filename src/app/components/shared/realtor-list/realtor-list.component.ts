@@ -8,39 +8,13 @@ import { RealtorService } from 'src/app/services/realtor.service';
   styleUrls: ['./realtor-list.component.scss']
 })
 export class RealtorListComponent implements OnInit {
-  // realtors: Realtor[] = [];
-  realtors: Realtor[] = [
-    {
-      "id": 1,
-      "firstname": "Петро",
-      "middlename": "Петрович",
-      "lastname": "Петренко",
-      "experience": 5,
-      "agencyid": 1
-  },
-  {
-    "id": 1,
-    "firstname": "Петро",
-    "middlename": "Петрович",
-    "lastname": "Петренко",
-    "experience": 5,
-    "agencyid": 1
-},
-{
-  "id": 1,
-  "firstname": "Петро",
-  "middlename": "Петрович",
-  "lastname": "Петренко",
-  "experience": 5,
-  "agencyid": 1
-}
-  ]
+  realtors: Realtor[] = [];
 
   constructor(private realtorService: RealtorService) { }
 
   ngOnInit(): void {
-    // this.realtorService.loadRealtors().subscribe(result => {
-    //   this.realtors = result as Realtor[];
-    // })
+    this.realtorService.loadRealtors().subscribe(result => {
+      this.realtors = result as Realtor[];
+    });
   }
 }
