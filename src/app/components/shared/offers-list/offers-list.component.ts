@@ -60,16 +60,16 @@ export class OffersListComponent implements OnInit {
     let switchedArray: Offer[] = [];
     let switchFilters: number[] = [];
     if (this.roomEnabled) {
-      switchFilters.push(1);
+      switchFilters.push(0);
     }
     if (this.houseEnabled) {
-      switchFilters.push(2);
+      switchFilters.push(1);
     }
     if (this.garageEnabled) {
-      switchFilters.push(3);
+      switchFilters.push(2);
     }
     if (this.terrainEnabled) {
-      switchFilters.push(4);
+      switchFilters.push(3);
     }
     filteredArray = this.mockedOffers.filter(offer => {
       return offer.title.toLowerCase().includes(this.searchValue.toLowerCase());
