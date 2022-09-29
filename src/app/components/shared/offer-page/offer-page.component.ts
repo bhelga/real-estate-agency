@@ -87,7 +87,7 @@ export class OfferPageComponent implements OnInit {
 
   onSendMessageSubmit() { 
     let review: Review = {
-      id: new Date().getTime(),
+      id: 0,
       review: this.reviewMessage,
       offerid: this.offer.id,
       userid: this.authenticationService.currentUserValue.id,
