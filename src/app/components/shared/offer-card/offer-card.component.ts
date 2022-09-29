@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Offer } from 'src/app/models/offer';
 import { User } from 'src/app/models/user';
 import { AuthenticationService } from 'src/app/services/authentication.service';
@@ -25,7 +26,16 @@ export class OfferCardComponent implements OnInit {
     'https://i.pinimg.com/564x/7e/49/6b/7e496b36da5af2c9fa740eb03a1a55a9.jpg'
   ];
   avatarsArray: string[] = [
-
+    'https://i.pinimg.com/564x/77/df/64/77df645e32515d4b6ece5f1596daf411.jpg',
+    'https://i.pinimg.com/564x/13/5b/0c/135b0c39da3c4807d3ed58dd98cc3acb.jpg',
+    'https://i.pinimg.com/564x/56/06/d3/5606d32a2fbebe382966966426d4e60c.jpg',
+    'https://i.pinimg.com/564x/56/06/d3/5606d32a2fbebe382966966426d4e60c.jpg',
+    'https://i.pinimg.com/564x/fb/95/ff/fb95ff855574da655675c583e9016df1.jpg',
+    'https://i.pinimg.com/564x/85/2d/92/852d9288b8c12c3167acddcc6d1865c2.jpg',
+    'https://i.pinimg.com/564x/ab/d8/fe/abd8fe620a52bc83b584640c14865664.jpg',
+    'https://i.pinimg.com/564x/77/bc/a3/77bca36e0f7a2afbcec76043f4678ef2.jpg',
+    'https://i.pinimg.com/564x/83/7d/a8/837da8f3cecaaa237e483db0454bcfb3.jpg',
+    'https://i.pinimg.com/564x/f9/95/39/f99539925523169aed4690355882f34b.jpg'
   ];
 
   image: string = '';
@@ -35,28 +45,31 @@ export class OfferCardComponent implements OnInit {
 
   constructor(
     private authenticationService: AuthenticationService,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
 ) {
-    this.currentUser = {
-        id: 2,
-        firstName: "Петро",
-        middleName: "Петрович",
-        lastName: "Петренко",
-        telephone: "+38000000000",
-        email: "example@example.com",
-        login: "123",
-        password: "123",
-        role: 3,
-      }
-    // this.currentUserSubscription = this.authenticationService.currentUser.subscribe((user: any) => {
-    //     this.currentUser = user;
-    // });
+    // this.currentUser = {
+    //     id: 2,
+    //     firstName: "Петро",
+    //     middleName: "Петрович",
+    //     lastName: "Петренко",
+    //     telephone: "+38000000000",
+    //     email: "example@example.com",
+    //     login: "123",
+    //     password: "123",
+    //     role: 3,
+    //   };
+    this.currentUser = this.authenticationService.currentUserValue;
 }
 
   ngOnInit(): void {
     this.image = this.imagesArray.at(Math.floor(Math.random() * 10)) ?? '';
     this.avatar = this.avatarsArray.at(Math.floor(Math.random() * 10)) ?? '';
     this.offerType = this.getStringOfferType();
+  }
+
+  onCardClick() {
+    this.router.navigate(["offers/" + this.offer.id]);
   }
 
   private getStringOfferType(): string {

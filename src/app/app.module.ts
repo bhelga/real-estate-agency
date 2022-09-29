@@ -12,6 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { OffersListComponent } from './components/shared/offers-list/offers-list.component';
 import { OfferCardComponent } from './components/shared/offer-card/offer-card.component';
+import { OfferPageComponent } from './components/shared/offer-page/offer-page.component';
+import { OfferService } from './services/offer.service';
+import { ReviewService } from './services/review.service';
+import { UserService } from './services/user.service';
+import { ReviewCardComponent } from './components/shared/review-card/review-card.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,9 @@ import { OfferCardComponent } from './components/shared/offer-card/offer-card.co
     HomeComponent,
     RegisterComponent,
     OffersListComponent,
-    OfferCardComponent
+    OfferCardComponent,
+    OfferPageComponent,
+    ReviewCardComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +37,10 @@ import { OfferCardComponent } from './components/shared/offer-card/offer-card.co
     FormsModule
   ],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    OfferService,
+    ReviewService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

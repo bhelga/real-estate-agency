@@ -22,20 +22,20 @@ export class AuthenticationService {
     }
 
     login(login: string, password: string) {
-        let user: User = {
-            id: 2,
-            firstName: "Петро",
-            middleName: "Петрович",
-            lastName: "Петренко",
-            telephone: "+38000000000",
-            email: "example@example.com",
-            login: "123",
-            password: "123",
-            role: 3,
-          };
-        localStorage.setItem('currentUser', JSON.stringify(user));
-        this.currentUserSubject.next(user);
-        return user;
+        // let user: User = {
+        //     id: 2,
+        //     firstName: "Петро",
+        //     middleName: "Петрович",
+        //     lastName: "Петренко",
+        //     telephone: "+38000000000",
+        //     email: "example@example.com",
+        //     login: "123",
+        //     password: "123",
+        //     role: 3,
+        //   };
+        // localStorage.setItem('currentUser', JSON.stringify(user));
+        // this.currentUserSubject.next(user);
+        // return user;
         return this.http.get<any>(environment.API_URL + `User/get/${login}/${password}`)
             .pipe(map(user => {
                 if (user && user.id) {

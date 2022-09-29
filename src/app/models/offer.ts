@@ -11,5 +11,4 @@ export interface Offer {
     buyType: number;
     userId?: number;
     user: User;
-    reviews: Review[];
 }

@@ -23,20 +23,18 @@ export class HomeComponent implements OnInit, OnDestroy {
         private authenticationService: AuthenticationService,
         private userService: UserService
     ) {
-        this.currentUser = {
-            id: 2,
-            firstName: "Петро",
-            middleName: "Петрович",
-            lastName: "Петренко",
-            telephone: "+38000000000",
-            email: "example@example.com",
-            login: "123",
-            password: "123",
-            role: 3,
-          }
-        // this.currentUserSubscription = this.authenticationService.currentUser.subscribe((user: any) => {
-        //     this.currentUser = user;
-        // });
+        // this.currentUser = {
+        //     id: 2,
+        //     firstName: "Петро",
+        //     middleName: "Петрович",
+        //     lastName: "Петренко",
+        //     telephone: "+38000000000",
+        //     email: "example@example.com",
+        //     login: "123",
+        //     password: "123",
+        //     role: 3,
+        //   }
+        this.currentUser = this.authenticationService.currentUserValue;
     }
 
     ngOnInit() {

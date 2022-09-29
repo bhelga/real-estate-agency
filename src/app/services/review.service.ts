@@ -4,6 +4,7 @@ import { shareReplay } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Offer } from '../models/offer';
 import { environment } from 'src/environments/environment';
+import { Review } from '../models/review';
 
 const CACHE_SIZE = 1;
 
@@ -13,29 +14,29 @@ const CACHE_SIZE = 1;
 @Injectable({
   providedIn: 'root',
 })
-export class OfferService {
-  private _allOffers$: Observable<Offer[]> | undefined;
+export class ReviewService {
+  private _allReviews$: Observable<Review[]> | undefined;
 
   constructor(private http: HttpClient) {}
 
-  get allOffers(): Observable<Offer[]> {
-    if (!this._allOffers$) {
-      this._allOffers$ = this.loadOffers().pipe(
+  get allReviews(): Observable<Review[]> {
+    if (!this._allReviews$) {
+      this._allReviews$ = this.loadAllReviews().pipe(
         shareReplay(CACHE_SIZE)
       );
     }
-    return this._allOffers$;
+    return this._allReviews$;
   }
 
   /**
    * This service gets the features list from API
    * @returns - Feature array
    */
-  public loadOffers(): Observable<Offer[]> {
-    return this.http.get<Offer[]>(environment.API_URL + 'Offer/get');
+  public loadAllReviews(): Observable<Review[]> {
+    return this.http.get<Review[]>(environment.API_URL + 'Review/get');
   }
 
-  public loadOfferById(id: number): Observable<Offer> {
-    return this.http.get<Offer>(environment.API_URL + 'Offer/get/' + id);
+  public createReview(review: Review): void {
+    this.http.post<Review>(environment.API_URL + "Review/create", review);
   }
 }
